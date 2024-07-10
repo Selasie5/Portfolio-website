@@ -2,8 +2,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { FaGithub } from "react-icons/fa6";
-import { FaFilePdf } from "react-icons/fa6";
+import { FaGithub,FaLinkedin,FaFilePdf, FaInstagram,FaWhatsapp } from "react-icons/fa6";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
@@ -45,17 +44,18 @@ export default function Home() {
   }, []);
 
   return (
+    <section className="space-y-64  scroll-snap-y-mandatory scroll-snap-start">
     <motion.section
-      className="h-screen flex flex-col items-start justify-center space-y-3"
-      ref={sectionRef}
+      className="h-screen flex flex-col items-start justify-center space-y-3 snap-start"
+      // ref={sectionRef}
       initial={{ opacity: 0 }}
-      animate={{ opacity: isInView ? 1 : 0 }}
+      animate={{ opacity:  1  }}
       transition={{ duration: 1 }}
     >
       <motion.div
         className="flex items-center justify-center px-3 py-2 gap-x-2 bg-white/10 rounded-full"
         initial={{ y: -20, opacity: 0 }}
-        animate={{ y: isInView ? 0 : -20, opacity: isInView ? 1 : 0 }}
+        animate={{ y:  0, opacity: 1  }}
         transition={{ duration: 0.5 }}
       >
         <div className="h-3 w-3 bg-green-500 rounded-full"></div>
@@ -64,7 +64,7 @@ export default function Home() {
       <motion.h3
         className="text-2xl md:text-3xl font-normal font-Sans text-white"
         initial={{ y: -20, opacity: 0 }}
-        animate={{ y: isInView ? 0 : -20, opacity: isInView ? 1 : 0 }}
+        animate={{ y:  0, opacity: 1}}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
         Hi👋! I am Selasie Sepenu
@@ -72,7 +72,7 @@ export default function Home() {
       <motion.h1
         className=" text-[3.2rem] md:text-6xl font-Sans text-bold text-white md:w-4/5 leading-tight"
         initial={{ y: -20, opacity: 0 }}
-        animate={{ y: isInView ? 0 : -20, opacity: isInView ? 1 : 0 }}
+        animate={{ y:  0 , opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.4 }}
       >
         A software engineer <span className="font-extrabold">building user-centric software</span> based in Accra, Ghana.
@@ -80,7 +80,7 @@ export default function Home() {
       <motion.div
         className="flex flex-wrap gap-4 py-2"
         initial={{ y: -20, opacity: 0 }}
-        animate={{ y: isInView ? 0 : -20, opacity: isInView ? 1 : 0 }}
+        animate={{ y:  0, opacity:  1 }}
         transition={{ duration: 0.5, delay: 0.6 }}
       >
         <div className="border border-gray-200 px-5 py-2 rounded-full font-Poppins text-sm text-white hover:bg-white hover:text-black hover:font-bold hover:cursor-pointer transition-colors">
@@ -97,25 +97,60 @@ export default function Home() {
         </div>
       </motion.div>
       <motion.div
-        className="flex flex-col gap-y-3 md:gap-y-0 md:flex-row items-center justify-center gap-x-4 py-2 w-full md:w-0"
+        className="flex flex-col gap-y-3 md:gap-y-0 md:flex-row items-center justify-center gap-x-4 py-2 w-full md:w-auto"
         initial={{ y: -20, opacity: 0 }}
-        animate={{ y: isInView ? 0 : -20, opacity: isInView ? 1 : 0 }}
+        animate={{ y:  0, opacity:  1  }}
         transition={{ duration: 0.5, delay: 0.8 }}
       >
-        <button className="bg-purple-500/20 rounded-lg px-5 py-3 w-full md:w-0 text-white font-Plus text-md font-medium hover:bg-purple-500">
+        <button className="bg-purple-500/20 rounded-lg px-5 py-3 w-full md:w-auto  text-white font-Plus text-md font-medium hover:bg-purple-500">
           <Link href="" className="flex items-center justify-center gap-x-2">
             <FaFilePdf className="text-lg" />
             Download My Resume
           </Link>
         </button>
-        <button className="bg-green-500/20 rounded-lg px-5 py-3 w-full md:w-0 text-white font-Plus text-md font-medium hover:bg-green-500">
+        <button className="bg-green-500/20 rounded-lg px-5 py-3 w-full md:w-auto text-white font-Plus text-md font-medium hover:bg-green-500">
           <Link href="" className="flex items-center justify-center gap-x-2">
             <FaGithub className="text-lg" />
             View My Github
           </Link>
         </button>
       </motion.div>
-      
     </motion.section>
+
+    {/* About Me Details Section */}
+    <motion.section
+    ref={sectionRef} 
+    className="flex flex-col justify-center items-start group snap-start"
+    >
+      <motion.div className="flex flex-row justify-center items-center gap-x-4">
+        <span className="text-lg font-Sans font-light tracking-wider text-white/80">01</span>
+        <hr className="h-1 w-10 outline-none "></hr>
+        <h3 className="text-md font-light text-white/50 font-Plus tracking-wide">JUST A LITTLE MORE ABOUT ME</h3>
+        </motion.div>
+        <motion.div className="py-10 flex flex-col md:flex-row items-center justify-start gap-x-10  gap-y-10 md:gap-y-0">
+          <Image src="/Profile-Img.jpg" alt="" width={350} height={200} className="rounded-xl grayscale group-hover:grayscale-0"/>
+          <motion.div className="flex flex-col justify-center item-start gap-y-6">
+           
+          <p className="text-white font-light font-Plus  text-xl md:text-lg md:w-4/5 leading-normal">I&apos;m a software engineer with a passion for creating dynamic, user-centric web applications. With a strong background in JavaScript, TypeScript, Tailwind CSS, and Next.js, I thrive on bringing innovative ideas to life and solving complex problems with elegant code. I have close to 2 years of professional experience in the industry, working on a variety of exciting projects that have honed my skills and fueled my enthusiasm for software development especially frontend.I have dabbled my feet in the cloud a bit which lead to me attaining the     {" "} 
+          <span className="text-green-500 underline">
+            AWS Cloud Practitioner
+          </span>
+            {" "}  certification.  I am eager to learn new things and apply them readily.  Oh and I&apos;m a big fan of all things related to  music especially contemporary gospel music.   
+          </p>
+          <div className="flex justify-start items-center gap-x-4">
+              <Link href="">
+              <FaLinkedin className="text-xl text-white hover:text-green-50"/>
+              </Link>
+              <Link href="">
+              <FaInstagram className="text-xl text-white hover:text-green-50"/>      
+                </Link>
+              <Link href="">
+              <FaWhatsapp  className="text-xl text-white hover:text-green-50"/>
+              </Link>
+            </div>
+          </motion.div>
+        </motion.div>
+      </motion.section>
+    </section>
   );
 }
