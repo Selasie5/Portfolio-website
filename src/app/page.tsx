@@ -5,19 +5,22 @@ import Image from "next/image";
 import { FaGithub,FaLinkedin,FaFilePdf, FaInstagram,FaWhatsapp } from "react-icons/fa6";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import TechStackCard from "./TechStackCard";
+import TechStackCard from "./components/TechStackCard";
 import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact } from 'react-icons/fa';
 import { 
   SiTypescript ,
    SiNextdotjs,
+   SiTailwindcss,
    SiNodedotjs,
    SiExpress,
    SiMongodb,
    SiPostgresql,
    SiPrisma,
    SiFirebase,
-   SiJest
+   SiJest,
+   SiFigma
   } from "react-icons/si";
+import WorkExperienceCard from "./components/WorkExperienceCard";
 
 
 
@@ -145,7 +148,7 @@ export default function Home() {
       <motion.div className="flex flex-row justify-center items-center gap-x-4">
         <span className="text-lg font-Sans font-light tracking-wider text-white/80">01</span>
         <hr className="h-1 w-10 outline-none "></hr>
-        <h3 className="text-md font-light text-white/50 font-Plus tracking-wide">JUST A LITTLE MORE ABOUT ME</h3>
+        <h3 className="text-4xl md:text-5xl font-medium text-white/80 font-Sans tracking-wide">About Me</h3>
         </motion.div>
         <motion.div className="py-10 flex flex-col md:flex-row items-center justify-start gap-x-10  gap-y-10 md:gap-y-0">
           <Image src="/Profile-Img.jpg" alt="" width={350} height={200} className="rounded-xl grayscale group-hover:grayscale-0"/>
@@ -172,21 +175,30 @@ export default function Home() {
         </motion.div>
       </motion.section>
 
-      <motion.section>
+      <motion.section 
+      ref={sectionRef} 
+    initial={{ y: -20, opacity: 0 }}
+    animate={{ y: isInView ? 0 : -20, opacity: isInView ? 1 : 0 }}
+    transition={{ duration: 0.5, delay: 0.4 }}>
       <motion.div className="flex flex-col justify-center items-start gap-x-4">
-        <motion.div className="flex flex-row justify-start items-center gap-x-4">
+        <motion.div initial={{ y: -20, opacity: 0 }}
+    animate={{ y: isInView ? 0 : -20, opacity: isInView ? 1 : 0 }}
+    transition={{ duration: 0.5, delay: 0.6}} className="flex flex-row justify-start items-center gap-x-4">
         <span className="text-lg font-Sans font-light tracking-wider text-white/80">02</span>
         <hr className="h-1 w-10 outline-none "></hr>
-        <h3 className=" text-4xl md:text-5xl font-bold text-white/80 font-Plus tracking-wide">My Tech Stack</h3>
+        <h3 className="text-4xl md:text-5xl font-medium text-white/80 font-Sans tracking-wide">My Tech Stack</h3>
         </motion.div>
         <p className="text-white font-light text-md py-2 font-Poppins">My expertise lies in a robust and modern tech stack, enabling me to create high-quality, scalable, and performant web applications.</p>
-    <motion.div className="flex flex-wrap md:w-[85%] items-start justify-start gap-y-7 md:gap-y-10  gap-x-2 md:gap-x-8 mt-4">
+    <motion.div initial={{ y: -20, opacity: 0 }}
+    animate={{ y: isInView ? 0 : -20, opacity: isInView ? 1 : 0 }}
+    transition={{ duration: 0.5, delay: 0.9}} className="flex flex-wrap md:w-[85%] items-start justify-start gap-y-7 md:gap-y-10  gap-x-2 md:gap-x-8 mt-4">
       <TechStackCard icon={FaHtml5} language="HTML 5" domain="frontend"/>
       <TechStackCard icon={FaCss3Alt} language="CSS 3" domain="frontend"/>
       <TechStackCard icon={FaJsSquare} language="Javascript" domain=""/>
       <TechStackCard icon={FaReact} language="React" domain="frontend"/>
       <TechStackCard icon={SiTypescript} language="Typescript" domain=""/>
       <TechStackCard icon={ SiNextdotjs} language="Next JS" domain=""/>
+      <TechStackCard icon={  SiTailwindcss} language="Tailwind CSS" domain=""/>
       <TechStackCard icon={ SiNodedotjs } language="Node JS" domain="backend"/>
       <TechStackCard icon={SiExpress} language="Express JS" domain="backend"/>
       <TechStackCard icon={ SiMongodb } language="Mongo DB" domain="database"/>
@@ -194,9 +206,33 @@ export default function Home() {
       <TechStackCard icon={ SiPrisma  } language="Prisma" domain="database"/>
       <TechStackCard icon={ SiFirebase } language="Firebase" domain="backend"/>
       <TechStackCard icon={  SiJest } language="Jest" domain="testing"/>
+      <TechStackCard icon={  SiFigma } language="Figma" domain="frontend"/>
     </motion.div>
         </motion.div>
       </motion.section>
+
+      {/* Work Experience Section */}
+      <motion.section ref={sectionRef}>
+        <motion.div className="flex flex-col justify-center items-start gap-y-16">
+      <motion.div initial={{ y: -20, opacity: 0 }}
+    animate={{ y: isInView ? 0 : -20, opacity: isInView ? 1 : 0 }}
+    transition={{ duration: 0.5, delay: 0.6}} className="flex flex-row justify-start items-center gap-x-4">
+        <span className="text-lg font-Sans font-light tracking-wider text-white/80">03</span>
+        <hr className="h-1 w-10 outline-none "></hr>
+        <h3 className="text-4xl md:text-5xl font-medium text-white/80 font-Sans tracking-wide">Work Experience</h3>
+        </motion.div>
+        <motion.div
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: isInView ? 0 : -20, opacity: isInView ? 1 : 0 }}
+        transition={{ duration: 0.5, delay: 0.9}}
+         className="flex flex-col justify-center items-start py-4 gap-20">
+        <WorkExperienceCard startDate="May 2024" endDate="Present" company="Afrovivo"  role="Software Engineer" valuePresentedAtCompany1="Performed major product design changes that are instrumental in successfully delivering a product consumers love" valuePresentedAtCompany2="Built, deployed and documented an API that automates MailChimp audience subscription on our waitlist site." valuePresentedAtCompany3="Reviewed initial backend infrastructure and planned redesign to suit product requirements while enhancing optimization and efficiency." techStack1="Figma" techStack2="Node JS" techStack3="Express JS" techStack4="Postman"/>
+        <WorkExperienceCard startDate="Apr 2023" endDate="May 2024" company="LeadMonger"  role="Frontend Engineer" valuePresentedAtCompany1="Worked extensively and closely with a team of designers to develop visually appealing and highly responsive websites and web apps for clients." valuePresentedAtCompany2="Conducted basic user experience research, considered feedback, and implemented it to enhance user experience on all platforms I built." valuePresentedAtCompany3="Develop websites and web apps that meet the expectations of clients in both visuals aesthetics and functionality." techStack1="Figma" techStack2="Wordpress" techStack3="HTML" techStack4="CSS"/>
+        <WorkExperienceCard startDate="Aug 2023" endDate="Sep 2023" company="Andela Learning Community"  role="Frontend Engineer Trainee" valuePresentedAtCompany1="I was engaged in intense and extensive collaboration with both new and experienced devs to learn and work with the REACT JS library and Next JS framework." valuePresentedAtCompany2="I interacted with a community of learners and technical mentors, completed assessments, and various tasks." valuePresentedAtCompany3="Built an event ticketing system as a final project" techStack1="React JS" techStack2="Next JS" techStack3="React Native" techStack4="Typescript "/>
+        <WorkExperienceCard startDate="Jun 2023" endDate="Aug 2023" company="ALX Africa(Uptech Syndicate)"  role="UI/UX Designer" valuePresentedAtCompany1="I was the visual designer and slide deck master for my team. Hence, I gained extensive experience working on my presentation skills" valuePresentedAtCompany2="After weeks of brainstorming and ideation, my team came up with a technological solution to help the problem of increasing food prices in the African continent as a whole and Ghana especially.I developed the wireframes and prototypes for the mobile which aim to solve our identified problem" valuePresentedAtCompany3="Constantly worked with data from user experience research to iterate and improve the design and functionality of the solution" techStack1="Figma" techStack2="Miro" techStack3="Google Slides" techStack4="User Experience Research"/>
+        </motion.div>
+        </motion.div>
+        </motion.section>
     </section>
   );
 }
