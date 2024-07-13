@@ -46,7 +46,7 @@ const WorkExperienceCard :React.FC<WorkExperienceProps> = ({startDate,endDate,ro
             </div>
             <div>
             <button className='border border-white/80 px-6 py-2 rounded-full'>
-                <Link href="" className='text-white/80 font-Poppins'>
+                <Link href="https://www.linkedin.com/in/selasiekofisepenu/details/experience/" className='text-white/80 font-Poppins'>
                 Visit Link
                 </Link>
                 </button>

@@ -132,13 +132,13 @@ export default function Home() {
         transition={{ duration: 0.5, delay: 0.8 }}
       >
         <button className="bg-purple-500/20 rounded-lg px-5 py-3 w-full md:w-auto  text-white font-Plus text-md font-medium hover:bg-purple-500">
-          <Link href="" className="flex items-center justify-center gap-x-2">
+          <Link href="https://docs.google.com/document/d/1LCWEKlWDYSGduEfb9-0VGN_X24Wc_6xK7F_AMPgOFL8/edit?usp=sharing"  className="flex items-center justify-center gap-x-2">
             <FaFilePdf className="text-lg" />
-            Download My Resume
+            Take A Look At My Resume
           </Link>
         </button>
         <button className="bg-green-500/20 rounded-lg px-5 py-3 w-full md:w-auto text-white font-Plus text-md font-medium hover:bg-green-500">
-          <Link href="" className="flex items-center justify-center gap-x-2">
+          <Link href="https://github.com/Selasie5" className="flex items-center justify-center gap-x-2">
             <FaGithub className="text-lg" />
             View My Github
           </Link>
@@ -264,10 +264,10 @@ export default function Home() {
           <h5 className="font-Sans text-6xl font-medium text-white">Let&apos;s Connect🧋</h5>
           <h2 className="text-white font-normal font-Plus text-lg">I&apos;m always eager to connect with fellow professionals. discuss new opportunities and collaborate on exciting projects. Whether you have a question or just want to say a hello, feel free to reach out.</h2>
           <div className="flex flex-row justify-center items-center gap-5">
-            <SocialConnect icon={FaLinkedin} socialLink=""/>
-            <SocialConnect icon={FaInstagram} socialLink=""/>
-            <SocialConnect icon={FaSquareXTwitter} socialLink=""/>
-            <SocialConnect icon={MdMarkEmailUnread} socialLink=""/>
+            <SocialConnect icon={FaLinkedin} socialLink="https://www.linkedin.com/in/selasiekofisepenu/"/>
+            <SocialConnect icon={FaInstagram} socialLink="https://www.instagram.com/dev_selasie/"/>
+            <SocialConnect icon={FaSquareXTwitter} socialLink="https://x.com/SelasiSepenu"/>
+            <SocialConnect icon={MdMarkEmailUnread} socialLink="selasisepenu5@gmail.com"/>
             <SocialConnect icon={FaWhatsapp} socialLink=""/>
           </div>
           <button className="bg-purple-500/20 text-white font-Sans font-bold text-md tracking-normal px-5 py-[0.9rem] rounded-xl hover:bg-green-300 hover:text-green-900">
