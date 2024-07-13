@@ -29,7 +29,7 @@ const ProjectCard:React.FC<ProjectProps> = ({title, overview, githubLink,liveLin
             <div className='flex flex-wrap justify-start items-center gap-4'>
             {techStack.map((tech, index)=>
             (
-                <div key={index} className='border bordr-white rounded-full text-white px-5 py-2'>
+                <div key={index} className='border border-white rounded-full text-white px-5 py-2 hover:border-none hover:cursor-pointer hover:bg-white/50'>
                     <span className='font-Plus text-sm font-bold'>
                     {tech}
                     </span>
