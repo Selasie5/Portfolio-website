@@ -21,6 +21,7 @@ import {
    SiFigma
   } from "react-icons/si";
 import WorkExperienceCard from "./components/WorkExperienceCard";
+import ProjectCard from "./components/ProjectCard";
 
 
 
@@ -160,17 +161,6 @@ export default function Home() {
           </span>
             {" "}  certification.  I am eager to learn new things and apply them readily.  Oh and I&apos;m a big fan of all things related to  music especially contemporary gospel music.   
           </p>
-          <div className="flex justify-start items-center gap-x-4">
-              <Link href="">
-              <FaLinkedin className="text-xl text-white hover:text-green-50"/>
-              </Link>
-              <Link href="">
-              <FaInstagram className="text-xl text-white hover:text-green-50"/>      
-                </Link>
-              <Link href="">
-              <FaWhatsapp  className="text-xl text-white hover:text-green-50"/>
-              </Link>
-            </div>
           </motion.div>
         </motion.div>
       </motion.section>
@@ -232,6 +222,31 @@ export default function Home() {
         <WorkExperienceCard startDate="Jun 2023" endDate="Aug 2023" company="ALX Africa(Uptech Syndicate)"  role="UI/UX Designer" valuePresentedAtCompany1="I was the visual designer and slide deck master for my team. Hence, I gained extensive experience working on my presentation skills" valuePresentedAtCompany2="After weeks of brainstorming and ideation, my team came up with a technological solution to help the problem of increasing food prices in the African continent as a whole and Ghana especially.I developed the wireframes and prototypes for the mobile which aim to solve our identified problem" valuePresentedAtCompany3="Constantly worked with data from user experience research to iterate and improve the design and functionality of the solution" techStack1="Figma" techStack2="Miro" techStack3="Google Slides" techStack4="User Experience Research"/>
         </motion.div>
         </motion.div>
+        </motion.section>
+
+        {/* Project Section */}
+        <motion.section ref={sectionRef}>
+          <motion.div className="flex flex-col jusitfy-center items-start ">
+          <motion.div initial={{ y: -20, opacity: 0 }}
+    animate={{ y: isInView ? 0 : -20, opacity: isInView ? 1 : 0 }}
+    transition={{ duration: 0.5, delay: 0.6}} className="flex flex-row justify-start items-center gap-x-4">
+        <span className="text-lg font-Sans font-light tracking-wider text-white/80">04</span>
+        <hr className="h-1 w-10 outline-none "></hr>
+        <h3 className="text-4xl md:text-5xl font-medium text-white/80 font-Sans tracking-wide">Recent Projects</h3>
+        </motion.div>
+        <p className="text-white font-light text-md py-2 font-Poppins">During my free time, I build some projects to continuously improve my software engineering skills.</p>
+        <motion.div
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: isInView ? 0 : -20, opacity: isInView ? 1 : 0 }}
+        transition={{ duration: 0.5, delay: 0.9}}
+         className="grid  md:grid-cols-2 place-items-center gap-10 mt-5">
+          <ProjectCard title="Mailchimp Connect API"  overview ="This API was built to connect the waitlist form on a website to mailchimp, so transactional or marketing email sending can be easily done." githubLink="" liveLink="" techStack={["NodeJS", "Express JS","Typescript","Heroku","Mailchimp API"]} bgColor="bg-purple-500" hoverBgColor="hover:bg-purple-500/50"/>
+          <ProjectCard title="Notify"  overview ="This is a fullstack web-application with authentication and CRUD feature that enables people to take notes , pin them and effectively filter them based on category" githubLink="" liveLink="" techStack={["React JS", "Tailwind CSS","Node JS","Express JS","MongoDB","Render"]} bgColor="bg-green-500" hoverBgColor="hover:bg-green-500/50"/>
+          <ProjectCard title="Droply"  overview ="This API was built to connect the waitlist form on a website to mailchimp, so transactional or marketing email sending can be easily done." githubLink="" liveLink="" techStack={["Next JS","Tailwind CSS", "Typescript","Firebase","Render"]} bgColor="bg-blue-500" hoverBgColor="hover:bg-blue-500/50"/>
+          <ProjectCard title="ElastiSearch"  overview="This is a fullstack web application that leverages the high-performace searching ability of PostgreSQL to model a search engine for a database seeded with jacket data " githubLink="" liveLink="" techStack={["Next JS","Tailwind CSS", "Typescript","Neon","PostgreSQL","Drizzle ORM","Render"]} bgColor="bg-emerald-500" hoverBgColor="hover:bg-emerald-500/50"/>
+         
+        </motion.div>
+          </motion.div>
         </motion.section>
     </section>
   );
