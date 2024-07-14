@@ -148,10 +148,6 @@ export default function Home() {
 
     {/* About Me Details Section */}
     <motion.section
-    ref={sectionRef} 
-    initial={{ y: -20, opacity: 0 }}
-    animate={{ y: isInView ? 0 : -20, opacity: isInView ? 1 : 0 }}
-    transition={{ duration: 0.5, delay: 0.4 }}
     className="flex flex-col justify-center items-start group snap-start my-24"
     >
       <motion.div className="flex flex-row justify-center items-center gap-x-4">
@@ -173,23 +169,15 @@ export default function Home() {
         </motion.div>
       </motion.section>
 
-      <motion.section 
-      ref={sectionRef} 
-    initial={{ y: -20, opacity: 0 }}
-    animate={{ y: isInView ? 0 : -20, opacity: isInView ? 1 : 0 }}
-    transition={{ duration: 0.5, delay: 0.4 }} className=" my-24">
+      <motion.section  className=" my-24">
       <motion.div className="flex flex-col justify-center items-start gap-x-4">
-        <motion.div initial={{ y: -20, opacity: 0 }}
-    animate={{ y: isInView ? 0 : -20, opacity: isInView ? 1 : 0 }}
-    transition={{ duration: 0.5, delay: 0.6}} className="flex flex-row justify-start items-center gap-x-4">
+        <motion.div className="flex flex-row justify-start items-center gap-x-4">
         <span className="text-lg font-Sans font-light tracking-wider text-white/80">02</span>
         <hr className="h-1 w-10 outline-none "></hr>
         <h3 className="text-4xl md:text-5xl font-medium text-white/80 font-Sans tracking-wide">My Tech Stack</h3>
         </motion.div>
         <p className="text-white font-light text-md py-2 font-Poppins">My expertise lies in a robust and modern tech stack, enabling me to create high-quality, scalable, and performant web applications.</p>
-    <motion.div initial={{ y: -20, opacity: 0 }}
-    animate={{ y: isInView ? 0 : -20, opacity: isInView ? 1 : 0 }}
-    transition={{ duration: 0.5, delay: 0.9}} className="flex flex-wrap md:w-[85%] items-start justify-start gap-y-7 md:gap-y-10  gap-x-2 md:gap-x-8 mt-4">
+    <motion.div className="flex flex-wrap md:w-[85%] items-start justify-start gap-y-7 md:gap-y-10  gap-x-2 md:gap-x-8 mt-4">
       <TechStackCard icon={FaHtml5} language="HTML 5" domain="frontend"/>
       <TechStackCard icon={FaCss3Alt} language="CSS 3" domain="frontend"/>
       <TechStackCard icon={FaJsSquare} language="Javascript" domain=""/>
@@ -210,20 +198,14 @@ export default function Home() {
       </motion.section>
 
       {/* Work Experience Section */}
-      <motion.section ref={sectionRef} className=" my-24">
+      <motion.section  className=" my-24">
         <motion.div className="flex flex-col justify-center items-start gap-y-16">
-      <motion.div initial={{ y: -20, opacity: 0 }}
-    animate={{ y: isInView ? 0 : -20, opacity: isInView ? 1 : 0 }}
-    transition={{ duration: 0.5, delay: 0.6}} className="flex flex-row justify-start items-center gap-x-4">
+      <motion.div className="flex flex-row justify-start items-center gap-x-4">
         <span className="text-lg font-Sans font-light tracking-wider text-white/80">03</span>
         <hr className="h-1 w-10 outline-none "></hr>
         <h3 className="text-4xl md:text-5xl font-medium text-white/80 font-Sans tracking-wide">Work Experience</h3>
         </motion.div>
-        <motion.div
-        initial={{ y: -20, opacity: 0 }}
-        animate={{ y: isInView ? 0 : -20, opacity: isInView ? 1 : 0 }}
-        transition={{ duration: 0.5, delay: 0.9}}
-         className="flex flex-col justify-center items-start py-4 gap-20">
+        <motion.div className="flex flex-col justify-center items-start py-4 gap-20">
         <WorkExperienceCard startDate="Jul 2024" endDate="Present" company="Hedstarter AI"  role="Software Engineering Fellow" valuePresentedAtCompany1="Performed major product design changes that are instrumental in successfully delivering a product consumers love" valuePresentedAtCompany2="Built, deployed and documented an API that automates MailChimp audience subscription on our waitlist site." valuePresentedAtCompany3="Reviewed initial backend infrastructure and planned redesign to suit product requirements while enhancing optimization and efficiency." techStack1="Next JS" techStack2="AWS" techStack3="Open AI API" techStack4="Stripe"/>
         <WorkExperienceCard startDate="May 2024" endDate="Present" company="Afrovivo"  role="Software Engineer" valuePresentedAtCompany1="Performed major product design changes that are instrumental in successfully delivering a product consumers love" valuePresentedAtCompany2="Built, deployed and documented an API that automates MailChimp audience subscription on our waitlist site." valuePresentedAtCompany3="Reviewed initial backend infrastructure and planned redesign to suit product requirements while enhancing optimization and efficiency." techStack1="Figma" techStack2="Node JS" techStack3="Express JS" techStack4="Postman"/>
         <WorkExperienceCard startDate="Apr 2023" endDate="May 2024" company="LeadMonger"  role="Frontend Engineer" valuePresentedAtCompany1="Worked extensively and closely with a team of designers to develop visually appealing and highly responsive websites and web apps for clients." valuePresentedAtCompany2="Conducted basic user experience research, considered feedback, and implemented it to enhance user experience on all platforms I built." valuePresentedAtCompany3="Develop websites and web apps that meet the expectations of clients in both visuals aesthetics and functionality." techStack1="Figma" techStack2="Wordpress" techStack3="HTML" techStack4="CSS"/>
@@ -234,11 +216,8 @@ export default function Home() {
         </motion.section>
 
         {/* Project Section */}
-        <motion.section ref={sectionRef} className="py-10  my-24">
+        <motion.section  className="py-10  my-24">
           <motion.div 
-          initial={{ y: -20, opacity: 0 }}
-          animate={{ y: isInView ? 0 : -20, opacity: isInView ? 1 : 0 }}
-          transition={{ duration: 0.5, delay: 0.6}}
           className="flex flex-col jusitfy-center items-start ">
           <motion.div  className="flex flex-row justify-start items-center gap-x-4">
         <span className="text-lg font-Sans font-light tracking-wider text-white/80">04</span>
